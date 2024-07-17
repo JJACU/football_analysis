@@ -1,11 +1,7 @@
 import pandas as pd
+import re
 
 df = pd.read_csv('C:\pythonML\events.csv')
 
-
-
-
-print(df.tail())
-
-wedewdfef3d
-d3fd3fd3d3d3d3d
+new_df = df[df['text'].str.contains(r'Goal', case=False, na=False )]
+print(new_df.count())
