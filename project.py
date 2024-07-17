@@ -2,13 +2,6 @@ import pandas as pd
 import re
 
 df = pd.read_csv('C:\pythonML\events.csv')
+new_df = df[(df['event_type'] == 6) & (df['time'].between(1,10))]
 
-
-
-# Filtracja danych
-goal_df = df[df['text'].str.contains(r'Goal')]
-new_df = goal_df.query('bodypart == 1.0 & location == 3.0')
-
-# Wyświetlenie wyniku
-print(new_df[['text', 'event_type', 'event_team', 'player', 'player2', 'location', 'bodypart', 'assist_method']].head(10))
-
+print(new_df[['time', 'text', 'event_type', 'event_team', 'opponent', 'player']])
