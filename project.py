@@ -4,7 +4,7 @@ import re
 df = pd.read_csv('C:\pythonML\events.csv')
 
 new_df = df[df['text'].str.contains(r'Goal', case=False, na=False )]
-print(new_df.count())
+
 
 goal_counts = new_df['player'].value_counts()
 
