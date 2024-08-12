@@ -1,7 +1,13 @@
-import pandas as pd
-import re
+import numpy as np # linear algebra
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+import matplotlib.pyplot as plt
+import seaborn as sns  # visualization tool
 
-df = pd.read_csv('C:\pythonML\events.csv')
-new_df = df[(df['event_type'] == 6) & (df['time'].between(1,10))]
-
-print(new_df[['time', 'text', 'event_type', 'event_team', 'opponent', 'player']])
+data = pd.read_csv('C:\\pythonML\\pokemon_data.csv')
+data.Speed.plot(kind = 'line', color = 'g',label = 'Speed',linewidth=1,alpha = 0.5,grid = True,linestyle = ':')
+data.Defense.plot(color = 'r',label = 'Defense',linewidth=1, alpha = 0.5,grid = True,linestyle = '-.')
+plt.legend(loc='upper right')     # legend = puts label into plot
+plt.xlabel('x axis')              # label = name of label
+plt.ylabel('y axis')
+plt.title('Line Plot')            # title = title of plot
+plt.show()
